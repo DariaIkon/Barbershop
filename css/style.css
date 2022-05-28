@@ -71,6 +71,8 @@ p {
     min-width: 160px;
     border: 1px solid var(--accent-color);
     border-radius: 25px;
+
+    background: transparent;
 }
 .model-open-btn-light {
     color: var(--font-light-color);
@@ -84,6 +86,15 @@ p {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.subtitle::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-right: 20px;
 }
 
 .description {
@@ -96,9 +107,15 @@ p {
 .subtitle-dark {
     color: var(--font-main);
 }
+.subtitle-dark::before {
+    background: var(--font-main-color);
+}
 
 .subtitle-light {
     color: rgba(157, 164, 189, 0.6);
+}
+.subtitle-light::before {
+    background: rgba(157, 164, 189, 0.6);
 }
 
 .description-dark {
@@ -161,6 +178,18 @@ p {
 }
 .top-left ul {
     display: flex;
+    align-items: center;
+
+}
+.top-left ul::before{
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 60px;
+    height: 1px;
+    background: var(--font-main-color);
+    margin-right: 40px;
+    
 }
 .top-left ul li:not(:last-child){
     margin-right: 40px;
@@ -180,6 +209,9 @@ p {
 .top-right {
     flex-grow: 1;
     padding: 272px 525px 206px 100px;
+    background-color: #555555;
+    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)), url(../images/top/bg-top.jpg);
+    
 }
 .top-right h1 {
     font-size: 72px;
@@ -217,8 +249,15 @@ p {
 
 /* ========== SERVICES ========= */
 
+.services {
+    background-image: url(../images/services/bg-services.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #111319;
+    background-size: cover;
+}
 .services h2 {
-    /* color: var(--font-light-color); */
+    color: var(--font-light-color);
 }
 .services .prices {
     display: flex;
@@ -226,12 +265,20 @@ p {
 }
 .services .prices ul {
     width: 50%;
-    outline: 1px dashed black;
     padding: 30px 40px;
 }
 .services .prices ul li {
     display: flex;
     justify-content: space-between;
+}
+.services .prices ul li:not(:last-child){
+    margin-bottom: 20px;
+}
+.prices ul:first-child {
+   background: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+.prices ul:last-child {
+    background: linear-gradient(180deg, #090B13 0%, rgba(9, 11, 19, 0.2) 100%);
 }
 .services ul span {
     font-size: 18px;
@@ -296,7 +343,7 @@ p {
 
 /* ========== MASTERS ========== */
 .masters {
-    /* background-color: palevioletred; */
+    background-color: #F7F7F7;
 }
 .masters h2 {
     margin-bottom: 44px;
@@ -316,6 +363,26 @@ p {
     display: flex;
     justify-content: space-between;
     text-align: center;
+}
+.masters__social-list {
+    width: 206px;
+    margin: 0 auto;
+}
+.masters__social-link {
+    display: flex;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+.masters__social-link svg {
+    width: 20px;
+    height: 20px;
+}
+.masters__social-link:hover svg {
+    fill: var(--accent-color);
 }
 .job-position {
     font-weight: 400;
@@ -391,10 +458,12 @@ p {
 }
 .footer .container ul {
     display: flex;
+    align-items: center;
 }
 .footer ul li:not(:last-child) {
     margin-right: 30px;
 }
+
 .footer small {
     font-size: 11px;
     line-height: 1.364;
@@ -412,5 +481,14 @@ p {
 .footer a:active,
 .footer a:focus {
     color: var(--accent-color);
+}
+.footer ul::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--font-main-color);
+    margin-right: 40px;
+
 }
 /* ========== /FOOTER ========== */
